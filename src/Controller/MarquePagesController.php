@@ -20,4 +20,15 @@ class MarquePagesController extends AbstractController
             'marque_pages' => $marque_pages
         ]);
     }
+
+    #[Route('/ajouter')]
+    public function ajoutMarquePage(EntityManagerInterface $entityManager){
+        $marque_page = new MarquePage();
+        $marque_page->setUrl("https://site.nc/");
+        $marque_page->setDateCreation(new \DateTime());
+        $marque_page->setCommentaire("Pas de commentaire");
+        $entityManager->persist($marque_page);
+        $entityManager->flush();
+        return new Response("Marque page ajouté avec succès (id :".$marque_page->getId().")");
+    }
 }
