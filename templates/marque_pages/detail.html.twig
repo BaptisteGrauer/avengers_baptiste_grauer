@@ -34,7 +34,13 @@
                 <th scope="row"> dateCreation </th>
                 <td>{{ marquePage.dateCreation|date('Y-m-d H:i:s') }}</td>
             </tr>
+            <tr>
+                <th scope="row"> motsCles </th>
+
+                <td>{% for mc in marquePage.getMotsCles %}{{ mc.getMotCle }} {% endfor %}</td>
+            </tr>
             </tbody>
         </table>
     </div>
+    <a href="/marque-pages">Retour à la liste</a>
 {% endblock %}

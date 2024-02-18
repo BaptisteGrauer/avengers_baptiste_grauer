@@ -18,6 +18,7 @@
                         <th>ID</th>
                         <th>Nom</th>
                         <th>Commentaire</th>
+                        <th>Détails du marque page</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -26,6 +27,7 @@
                             <td>{{ mpr.id }}</td>
                             <td>{{ mpr.url }}</td>
                             <td>{{ mpr.commentaire }}</td>
+                            <td><a style="border: unset" href="details/{{ mpr.id }}">Détails</a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
