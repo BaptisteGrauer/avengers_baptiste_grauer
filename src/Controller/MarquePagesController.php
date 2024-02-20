@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/marque-pages', requirements: ["_locale" => "en|es|fr"], name: "marquepage_")]
+#[Route('/marque-pages', name: "marquepage_")]
 class MarquePagesController extends AbstractController
 {
     #[Route('/', name: 'index')]

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du Marque-Page{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Détails du livre</h1>
+
+        <table class="table-custom">
+            <thead>
+            <tr>
+                <th scope="col">Libelle</th>
+                <th scope="col">Valeur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"> id </th>
+                <td>{{ livre.id }}</td>
+            </tr>
+            <tr>
+                <th scope="row"> titre </th>
+                <td>{{ livre.titre }}</td>
+            </tr>
+            <tr>
+                <th scope="row"> auteur </th>
+                <td>{{ livre.auteur }}</td>
+            </tr>
+            <tr>
+                <th scope="row"> date_publication </th>
+                <td>{{ livre.datePublication|date('Y-m-d') }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="/livre">Retour à la liste</a>
+{% endblock %}

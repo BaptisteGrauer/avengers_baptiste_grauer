@@ -6,7 +6,7 @@
 
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <div class="container mt-5">
         <h1>Détails du Marque-Page</h1>
 
@@ -36,8 +36,7 @@
             </tr>
             <tr>
                 <th scope="row"> motsCles </th>
-
-                <td>{% for mc in marquePage.getMotsCles %}{{ mc.getMotCle }} {% endfor %}</td>
+                <td><ul>{% for mc in marquePage.getMotsCles %}<li>{{ mc.getMotCle }}</li>{% endfor %}</ul></td>
             </tr>
             </tbody>
         </table>
