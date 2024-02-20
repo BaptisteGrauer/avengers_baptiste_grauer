@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shhhh jvé te caillassé{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Flore</h1>
+        <div>
+            {% if flore is not empty %}
+                {% for photo in flore %}
+                    <img src="{{ asset(photo.image) }}">
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info alert-custom" role="alert">
+                    Aucune photo trouvée.
+                </div>
+            {% endif %}
+        </div>
+        <a href="{{ path("lecaillou_index") }}">Retour en arrière</a>
+    </div>
+{% endblock %}

@@ -8,8 +8,10 @@
         {% endblock %}
 
         {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {% block importmap %}{{ importmap('app') }}
+            {% endblock %}
         {% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     </head>
     <body>
         {% block body %}
@@ -17,6 +19,9 @@
                 <nav>
                     <a href="{{ path("marquepage_index") }}">Marque pages</a>
                     <a href="{{ path("livre_index") }}">Livres</a>
+                    <a href="{{ path("lecaillou_index") }}">Le Caillou</a>
+                    <a href="{{ path("lecaillou_faune") }}">Faune</a>
+                    <a href="{{ path("lecaillou_flore") }}">Flore</a>
                 </nav>
             </header>
             {% block content %}{% endblock %}
