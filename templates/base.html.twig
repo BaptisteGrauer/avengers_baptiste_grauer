@@ -19,12 +19,13 @@
                 <nav>
                     <a href="{{ path("marquepage_index") }}">Marque pages</a>
                     <a href="{{ path("livre_index") }}">Livres</a>
+                    <a href="{{ path("auteur_index") }}">Auteurs</a>
                     <a href="{{ path("lecaillou_index") }}">Le Caillou</a>
                     <a href="{{ path("lecaillou_faune") }}">Faune</a>
                     <a href="{{ path("lecaillou_flore") }}">Flore</a>
                 </nav>
             </header>
-            {% block content %}{% endblock %}
+            <section>{% block content %}{% endblock %}</section>
             <footer>Baptiste :)</footer>
         {% endblock %}
     </body>

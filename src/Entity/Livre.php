@@ -20,8 +20,8 @@ class Livre
     #[ORM\Column(length: 255)]
     private ?string $auteur = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date_publication = null;
+//    #[ORM\Column(type: Types::DATE_MUTABLE)]
+//    private ?\DateTimeInterface $date_publication = null;
 
     #[ORM\Column]
     private ?int $nb_pages = null;
@@ -55,17 +55,17 @@ class Livre
         return $this;
     }
 
-    public function getDatePublication(): ?\DateTimeInterface
-    {
-        return $this->date_publication;
-    }
+//    public function getDatePublication(): ?\DateTimeInterface
+//    {
+//        return $this->date_publication;
+//    }
 
-    public function setDatePublication(\DateTimeInterface $date_publication): static
-    {
-        $this->date_publication = $date_publication;
-
-        return $this;
-    }
+//    public function setDatePublication(\DateTimeInterface $date_publication): static
+//    {
+//        $this->date_publication = $date_publication;
+//
+//        return $this;
+//    }
 
     public function getNbPages(): ?int
     {
