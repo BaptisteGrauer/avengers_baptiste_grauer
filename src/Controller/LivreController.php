@@ -52,6 +52,20 @@ class LivreController extends AbstractController
             ['formulaire_ajout_livre' => $form->createView(),]);
     }
 
+
+    #[Route('/ajout/{id}', name:'modifier')]
+    public function modifAuteur(int $id, EntityManagerInterface $entityManager, Request $request)
+    {
+        $livre = $entityManager->getRepository(Livre::class)->find($id);
+        $form = $this->createForm(LivreType::class, $livre);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($livre);
+            $entityManager->flush();
+            return $this->redirectToRoute('livre_ajout_succes');
+        }
+        return $this->render('auteur/ajout.html.twig',['formulaire_ajout_auteur' => $form->createView(),]);
+    }
     // Confirmation d'envoi du formulaire
     #[Route('/ajout-succes', name: 'ajout_succes')]
     public function ajoutSucces()
