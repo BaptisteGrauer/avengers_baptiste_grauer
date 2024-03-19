@@ -5,4 +5,5 @@
 {% block content %}
     <h1>Ajouter un auteur</h1>
     {{ form(formulaire_ajout_auteur) }}
+    <a href="{{ path('auteur_index') }}">Retour à la liste des auteurs</a>
 {% endblock %}

@@ -2,12 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\AuteurRepository;
-use Doctrine\DBAL\Types\Types;
+use App\Repository\EmployeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AuteurRepository::class)]
-class Auteur
+#[ORM\Entity(repositoryClass: EmployeRepository::class)]
+class Employe
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,8 +19,9 @@ class Auteur
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
-//    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-//    private ?\DateTimeInterface $date_naissance = null;
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Adresse $adresse = null;
 
     public function getId(): ?int
     {
@@ -52,20 +52,15 @@ class Auteur
         return $this;
     }
 
-//    public function getDateNaissance(): ?\DateTimeInterface
-//    {
-//        return $this->date_naissance;
-//    }
-//
-//    public function setDateNaissance(\DateTimeInterface $date_naissance): static
-//    {
-//        $this->date_naissance = $date_naissance;
-//
-//        return $this;
-//    }
-
-    public function __toString(): string
+    public function getAdresse(): ?Adresse
     {
-        return $this->nom. " " .$this->prenom;
+        return $this->adresse;
+    }
+
+    public function setAdresse(Adresse $adresse): static
+    {
+        $this->adresse = $adresse;
+
+        return $this;
     }
 }

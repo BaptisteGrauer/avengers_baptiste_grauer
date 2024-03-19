@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employe{% endblock %}
+
+{% block content %}
+    <h1>Ajouter un auteur</h1>
+    {{ form(formulaire_ajout_employe) }}
+    <a href="{{ path('employe_index') }}">Retour à la liste des employé</a>
+{% endblock %}

@@ -23,6 +23,7 @@
                             <td>{{ livre.auteur }}</td>
 {#                            <td>{{ livre.datePublication|date('Y-m-d')}}</td>#}
                             <td><a style="border: unset" href="details/{{ livre.id }}">Détails</a></td>
+                            <td><a style="border: unset" href="ajout/{{ livre.id }}">Modifier</a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -33,5 +34,6 @@
                 Aucun livre trouvé.
             </div>
         {% endif %}
+        <a href="{{ path('livre_ajout') }}">Ajouter un livre</a>
     </div>
 {% endblock %}

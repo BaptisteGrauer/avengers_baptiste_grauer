@@ -5,4 +5,5 @@
 {% block content %}
     <h1>Ajouter un livre</h1>
     {{ form(formulaire_ajout_livre) }}
+    <a href="{{ path('livre_index') }}">Retour à la liste des livre</a>
 {% endblock %}

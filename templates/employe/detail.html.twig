@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'employé{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Détails de l'employé</h1>
+
+        <table class="table-custom">
+            <thead>
+            <tr>
+                <th scope="col">Libelle</th>
+                <th scope="col">Valeur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"> id </th>
+                <td>{{ employe.id }}</td>
+            </tr>
+            <tr>
+                <th scope="row"> nom </th>
+                <td>{{ employe.nom }}</td>
+            </tr>
+            <tr>
+                <th scope="row"> prenom </th>
+                <td>{{ employe.prenom }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="/employe">Retour à la liste</a>
+{% endblock %}

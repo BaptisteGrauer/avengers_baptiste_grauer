@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\LivreRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: LivreRepository::class)]
 class Livre
@@ -18,10 +19,10 @@ class Livre
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $auteur = null;
-
-//    #[ORM\Column(type: Types::DATE_MUTABLE)]
-//    private ?\DateTimeInterface $date_publication = null;
+    #[ORM\ManyToOne(targetEntity: "App\Entity\Auteur",inversedBy: "livres")]
+    #[Assert\Type(type:"App\Entity\Auteur")]
+    #[Assert\Valid]
+    private $auteur;
 
     #[ORM\Column]
     private ?int $nb_pages = null;
